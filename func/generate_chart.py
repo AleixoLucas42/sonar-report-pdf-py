@@ -1,4 +1,3 @@
-
 coverage = 61.4
 duplicated_lines = 30.5
 bug_lines = 3.0
