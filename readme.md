@@ -21,5 +21,5 @@ docker run --rm --env-file=.env -v $PWD:/app/result aleixolucas/sonar-pdf-report
 ```
 ### OR
 ```
-docker run --rm -e component=project_name -e sonar_edpoint=https://sonar.example.com -e user=admin -e password=admin -v $PWD:/app/result aleixolucas/sonar-pdf-report:v1.2
+docker run --rm -e manager=you -e email=email@email.com -e component=project_name -e sonar_edpoint=https://sonar.example.com -e user=admin -e password=admin -v $PWD:/app/result aleixolucas/sonar-pdf-report:v1.2
 ```
