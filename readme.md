@@ -4,6 +4,8 @@
 https://hub.docker.com/r/aleixolucas/sonar-pdf-report
 
 ### Env var:
+- manager->The name it will appear on pdf as manager
+- email->The email it will appear on pdf
 - component->project_key
 - sonar_edpoint->sonar_address
 - user->sonar_user
