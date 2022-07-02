@@ -4,6 +4,8 @@
 https://hub.docker.com/r/aleixolucas/sonar-pdf-report
 
 ### Env var:
+- manager->The name it will appear on pdf as manager
+- email->The email it will appear on pdf
 - component->project_key
 - sonar_edpoint->sonar_address
 - user->sonar_user
@@ -15,5 +17,9 @@ docker build -t sonar-report . -f .docker/Dockerfile
 ```
 ### Docker Run:
 ```
-docker run --rm -e component=project_name -e sonar_edpoint=https://sonar.example.com -e user=admin -e password=admin -v $PWD:/app/result aleixolucas/sonar-pdf-report:v1
+docker run --rm --env-file=.env -v $PWD:/app/result aleixolucas/sonar-pdf-report:v1.2
+```
+### OR
+```
+docker run --rm -e component=project_name -e sonar_edpoint=https://sonar.example.com -e user=admin -e password=admin -v $PWD:/app/result aleixolucas/sonar-pdf-report:v1.2
 ```

@@ -10,8 +10,10 @@ metrics = "coverage,code_smells,reliability_rating,security_rating,bugs,vulnerab
 nota = "ABCDE"
 
 ############################CHANGE VARS##########################################
+manager = os.environ['manager']
+email = os.environ['email']
 component = os.environ['component']
-sonar_edpoint = os.environ['sonar_edpoint']
+sonar_endpoint = os.environ['sonar_endpoint']
 user = os.environ['user']
 password = os.environ['password']
 ############################/CHANGE VARS#########################################
@@ -20,7 +22,7 @@ auth = "{}:{}".format(user,password)
 data = base64.b64encode(auth.encode())
 token = data.decode("utf-8")
 
-url = "{}/api/measures/search_history?component={}&metrics={}".format(sonar_edpoint, component, metrics)
+url = "{}/api/measures/search_history?component={}&metrics={}".format(sonar_endpoint, component, metrics)
 payload={}
 headers = {
   'Content-Type': 'application/x-www-form-urlencoded',
@@ -28,7 +30,7 @@ headers = {
 }
 try:
   meansures = requests.request("GET", url, headers=headers, data=payload)
-  url = "{}/api/qualitygates/project_status?projectKey={}".format(sonar_edpoint, component)
+  url = "{}/api/qualitygates/project_status?projectKey={}".format(sonar_endpoint, component)
   project_status = requests.request("GET", url, headers=headers, data=payload)
 except Exception as err:
   print("Não foi possivel concluir a request, error code {}".format(err))
@@ -250,8 +252,8 @@ page = """
     <div class="report-content">
         <div id="data-info">
         <ul>
-            <li>E-mail: devsecops@pernambucanas.com.br</li>
-            <li>Project Owner: Gislene Abdom</li>
+            <li>E-mail: {}</li>
+            <li>Project Owner: {}</li>
             <li><a href="https://docs.sonarqube.org/latest/user-guide/metric-definitions/">SonarQube</a></li>
         </ul>
     </div>
@@ -265,7 +267,7 @@ page = """
 </body>
 
 </html>
-""".format(component, project_status, date.today(), coverage, duplicated_lines_density, reliability_rating, reliability_rating, bugs, code_smells, security_rating, security_rating, vulnerabilities, total_scan)
+""".format(component, project_status, date.today(), coverage, duplicated_lines_density, reliability_rating, reliability_rating, bugs, code_smells, security_rating, security_rating, vulnerabilities, total_scan, email, manager)
 
 config = pdfkit.configuration(wkhtmltopdf = r"wkhtmltopdf")
 pdfkit.from_string(page, "result/{}.pdf".format(component), configuration = config)
