@@ -23,3 +23,4 @@ docker run --rm --env-file=.env -v $PWD:/app/result aleixolucas/sonar-pdf-report
 ```
 docker run --rm -e manager=you -e email=email@email.com -e component=project_name -e sonar_edpoint=https://sonar.example.com -e user=admin -e password=admin -v $PWD:/app/result aleixolucas/sonar-pdf-report:v1.2
 ```
+******* To change the image you have to edit the html inside the python code.
