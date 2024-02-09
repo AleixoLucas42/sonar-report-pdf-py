@@ -1,0 +1,89 @@
+.bg-circle-A{
+    background: green;
+}
+.bg-circle-B{
+    background: #b0d513;
+}
+.bg-circle-C{
+    background: yellow;
+}
+.bg-circle-D{
+    background: orange;
+}
+.bg-circle-E{
+    background: red;
+}
+.letter-circle {
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    padding: 8px;
+    color: white;
+    text-align: center;
+    margin: 0 auto;
+    font: 32px Arial, sans-serif;
+}
+.div-flex {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    position: relative;
+}
+h1 {
+    position: absolute;
+    bottom: 4px;
+    right: 0;
+}
+.wrap-card {
+    margin: 0 auto;
+    width: 600px;
+}
+.card-flex {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-evenly;
+}
+.card-flex span {
+    font-weight: bold;
+    color: gray;
+}
+.card-flex label {
+    font-weight: bold;
+    font-size: 12px;
+}
+.content-card {
+    margin: 0 auto;
+    width: 800px;
+    background-color: white;
+    margin-top: 40px;
+    padding-bottom: 20px;
+    padding-right: 20px;
+    border-radius: 10px;
+}
+.report-content {
+    margin: 0 auto;
+    width: 815px;
+    margin-top: 15px;
+}
+.report-card{
+    border-radius: 10px;
+    background-color: white;
+    width: 240px;
+    height: 200px;
+    text-align: center;
+    padding: 10px;
+}
+.footer{
+    bottom: 0;
+    margin: 0 auto;
+    width: 815px;
+    height: 50px;
+    background-color: white;
+    text-align: center;
+}
+#data-info{
+    border-radius: 10px;
+    background-color: white;
+    height: 200px;
+    padding: 10px;
+}
